@@ -37,7 +37,6 @@ export const publishForm = async (formId: number) => {
             }
         })
     } catch (error) {
-        console.log('Error publishiing form', error)
-        return { success: false, message: 'Some Error Our while Publishing the Form' }
+        throw new Error(typeof error === 'string' ? error : JSON.stringify(error))
     }
 }

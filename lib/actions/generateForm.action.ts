@@ -104,8 +104,7 @@ export const generateForm = async (prevState: null, formData: FormData) => {
         try {
             formJson = JSON.parse(cleanedOutput);  // Manually parse the text response into JSON
         } catch (error) {
-            console.error("Error parsing JSON response:", error);
-            return { success: false, message: "Invalid JSON format", data: undefined };
+            throw new Error(typeof error === 'string' ? error : JSON.stringify(error))
         }
 
 
@@ -119,6 +118,6 @@ export const generateForm = async (prevState: null, formData: FormData) => {
 
         return { success: true, data: savedForm, message: 'Form Generated Successfully' }
     } catch (error) {
-        console.log(error)
+        throw new Error(typeof error === 'string' ? error : JSON.stringify(error))
     }
 }

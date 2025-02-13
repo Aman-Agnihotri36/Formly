@@ -39,7 +39,7 @@ export const createSubscription = async (detail: prop) => {
         }
     });
 
-    console.log(subscription)
+
 
     return subscription;
 }

@@ -41,6 +41,6 @@ export const submitFormAction = async (formId: number, formData: any) => {
         });
         return { success: true, message: "Form submitted successsfully." }
     } catch (error) {
-        console.log(error);
+        throw new Error(typeof error === 'string' ? error : JSON.stringify(error))
     }
 }
