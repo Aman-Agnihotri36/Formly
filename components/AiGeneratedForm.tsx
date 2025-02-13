@@ -17,6 +17,7 @@ import { submitFormAction } from '@/lib/actions/submitForm.action'
 function AiGeneratedForm({ form, isEditMode }: { form: any, isEditMode: boolean }) {
 
     const [successDialogOpen, setSuccessDialogOpen] = useState<boolean>(false);
+    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
     const [formData, setFormData] = useState<any>({})
 
     const handleChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
