@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Button } from '../ui/button'
 import { UserButton } from '@clerk/nextjs'
 import { DarkMode } from '../DarkMode'
-import { currentUser } from '@clerk/nextjs/server'
+
 import Image from 'next/image'
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '../ui/sheet'
 import { Separator } from '../ui/separator'
@@ -12,7 +12,7 @@ import { items } from './Sidebar'
 
 async function Header() {
 
-    const user = await currentUser()
+
     return (
         <div className="border-b">
 
@@ -37,6 +37,7 @@ async function Header() {
 
 
                                 <Separator className="border-gray-50" />
+                                {/* eslint-disable-next-line  @typescript-eslint/no-explicit-any */}
                                 {items.map((item: any, index: number) => (
                                     <Link key={index} href={item.url} className="p-2  text-gray-700  flex hover:bg-gray-100 rounded">
                                         {item.icon}

@@ -10,7 +10,7 @@ import { getForms } from "./getForms.action";
 
 
 
-export const generateForm = async (prevState: unknown, formData: FormData) => {
+export const generateForm = async (prevState: null, formData: FormData) => {
     try {
         const user = await currentUser()
         if (!user) {

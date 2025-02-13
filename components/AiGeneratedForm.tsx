@@ -50,6 +50,7 @@ function AiGeneratedForm({ form, isEditMode }: { form: any, isEditMode: boolean 
         <div>
             <form className='w-[265px] md:w-full' onSubmit={isEditMode ? handlePublish : handleSubmit}>
                 {
+                    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
                     form?.content?.formFields.map((item: any, index: number) => (
                         <div className='mb-4' key={index}>
                             <Label>{item?.label}</Label>
@@ -93,7 +94,7 @@ function AiGeneratedForm({ form, isEditMode }: { form: any, isEditMode: boolean 
                                     ) : (
                                         item.type === "checkbox" || "select" ? (
                                             item.options!.map((option: string, index: number) => (
-                                                <Label>
+                                                <Label key={index}>
                                                     <Checkbox name={item.label} value={option} />
                                                     <span>{option}</span>
                                                 </Label>
@@ -108,6 +109,7 @@ function AiGeneratedForm({ form, isEditMode }: { form: any, isEditMode: boolean 
                         </div>
                     ))
                 }
+
                 <Button className='w-full' type='submit'>
                     {isEditMode ? 'Publish' : form.content.submitButton.label ? form.content.submitButton.label : form.content.submitButton.text}
                 </Button>

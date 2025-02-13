@@ -39,6 +39,7 @@ const MyForm = async () => {
                 </Dialog>
             </section>
             <div className="flex mt-8 md:mt-8 md:justify-start md:ml-11 flex-wrap justify-center gap-8 md:gap-10">
+                {/*  eslint-disable-next-line  @typescript-eslint/no-explicit-any */}
                 {forms?.data?.map((form: any, index: number) => (
                     <FormList key={index} form={form} />
                 ))}

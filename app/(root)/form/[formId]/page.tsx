@@ -9,6 +9,7 @@ const SubmitForm = async ({ params }: { params: Promise<{ formId: string }> }) =
     if (!formId) {
         return <h1>No form id found for id {formId}</h1>;
     }
+    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
     const form: any = await prisma.form.findUnique({
         where: {
             id: Number(formId),

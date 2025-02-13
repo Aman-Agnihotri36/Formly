@@ -42,12 +42,13 @@ function GenerateFormInput({ allowForm, getLengthOfCreatedForms, text }: { allow
         if (state?.success) {
             toast(state.message)
             router.push(`/dashboard/forms/edit/${state?.data?.id}`)
-            console.log(state)
+
         }
 
 
     }, [state])
 
+    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
     const handleChange = (e: any) => {
         setdescription(e.target.value)
     }

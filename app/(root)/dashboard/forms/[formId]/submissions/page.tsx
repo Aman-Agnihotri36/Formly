@@ -22,6 +22,7 @@ const Submisions = async ({
     }
     return (
         <div className="w-full px-10 mt-5">
+            {/* eslint-disable-next-line  @typescript-eslint/no-explicit-any */}
             {submissions.map((submission: any, index: number) => (
                 <SubmissionsDetails key={index} submission={submission} index={index} />
             ))}

@@ -12,6 +12,7 @@ async function Edit({ params }: { params: { id: string } }) {
         return <h1>No form id found for id {formId}</h1>;
     }
 
+    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
     const form: any = await prisma.form.findUnique({
         where: {
             id: Number(formId)
@@ -23,6 +24,7 @@ async function Edit({ params }: { params: { id: string } }) {
     return (
         <div className='md:h-[80%] md:w-[60%]'>
             <Card className=' md:w-full  h-full md:mt-10 mx-auto  '>
+
                 <CardHeader>
                     <CardTitle>
                         <h1 className="font-bold text-2xl text-center">{form?.content?.formTitle || "NA"}</h1>
