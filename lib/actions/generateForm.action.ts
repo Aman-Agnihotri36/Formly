@@ -102,7 +102,7 @@ export const generateForm = async (prevState: null, formData: FormData) => {
 
         let formJson;
         try {
-            formJson = JSON.parse(cleanedOutput);  // Manually parse the text response into JSON
+            formJson = JSON.parse(cleanedOutput);
         } catch (error) {
             throw new Error(typeof error === 'string' ? error : JSON.stringify(error))
         }

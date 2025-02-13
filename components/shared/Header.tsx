@@ -2,7 +2,7 @@ import React from 'react'
 import Logo from './Logo'
 import Link from 'next/link'
 import { Button } from '../ui/button'
-import { UserButton } from '@clerk/nextjs'
+import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 import { DarkMode } from '../DarkMode'
 
 import Image from 'next/image'
@@ -54,7 +54,18 @@ async function Header() {
                         <Button variant={"link"}>Dashboard</Button>
                     </Link>
                     <div className='flex justify-between items-center gap-5'>
-                        <UserButton />
+                        <SignedIn>
+                            <UserButton signInUrl='/' />
+
+                        </SignedIn>
+
+                        <SignedOut>
+                            <Button asChild className="rounded-full size='lg">
+                                <Link href='/sign-in'>
+                                    Login
+                                </Link>
+                            </Button>
+                        </SignedOut>
                         <DarkMode />
                     </div>
                 </div>
