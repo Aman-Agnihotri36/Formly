@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import prisma from '@/lib/prisma';
 import React from 'react'
 
-async function Edit({ params }: { params: { id: string } }) {
+async function Edit({ params }: { params: Promise<{ id: string }> }) {
     const formId = (await params).id
 
 
