@@ -7,7 +7,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
         <>
             <SidebarProvider >
                 <DashboardSidebar />
-                <main className=" md:w-full grid place-content-center md:flex md:justify-center    mx-auto ">{children}</main>
+                <main className=" md:w-full      ">{children}</main>
             </SidebarProvider>
 
         </>

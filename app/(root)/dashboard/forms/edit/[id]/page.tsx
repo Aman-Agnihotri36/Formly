@@ -22,7 +22,7 @@ async function Edit({ params }: { params: Promise<{ id: string }> }) {
 
 
     return (
-        <div className='md:h-[80%] md:w-[60%]'>
+        <div className='md:h-[80%] md:w-[60%] mx-auto'>
             <Card className=' md:w-full  h-full md:mt-10 mx-auto  '>
 
                 <CardHeader>

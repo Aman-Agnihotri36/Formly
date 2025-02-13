@@ -19,7 +19,7 @@ const page = async () => {
 
     const numberOfSubmissions = submissions._sum.submission || 0
     return (
-        <div className='flex justify-center mt-10 md:justify-start  md:mt-8 md:ml-0'>
+        <div className='flex justify-center mt-10 md:justify-start md:ml-8  md:mt-8 '>
             <Analytics noOfSubmissions={numberOfSubmissions || 0} />
         </div>
     )
