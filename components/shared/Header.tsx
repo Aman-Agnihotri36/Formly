@@ -49,12 +49,13 @@ async function Header() {
                         </Sheet>
                     </div>
 
-                    <Link className='hidden md:block' href={"/dashboard/analytics"}>
-                        {" "}
-                        <Button variant={"link"}>Dashboard</Button>
-                    </Link>
+
                     <div className='flex justify-between items-center gap-5'>
                         <SignedIn>
+                            <Link className='hidden md:block' href={"/dashboard/analytics"}>
+                                {" "}
+                                <Button variant={"link"}>Dashboard</Button>
+                            </Link>
                             <UserButton signInUrl='/' />
 
                         </SignedIn>

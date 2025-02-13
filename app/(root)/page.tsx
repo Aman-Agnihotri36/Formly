@@ -13,11 +13,10 @@ export default async function Home() {
 
   const user = await currentUser()
 
-  if (!user) {
-    return
+  let isSubscribed;
+  if (user) {
+    isSubscribed = await getUserSubscription(user?.id)
   }
-
-  const isSubscribed = await getUserSubscription(user?.id)
   const level = isSubscribed?.level
   let allowForm = undefined;
   if (isSubscribed) {
