@@ -17,7 +17,7 @@ type Props = {
 
 function FormPublishDialog({ formId, open, onOpenChange }: Props) {
 
-    const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+    const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
 
     const copyClipboard = () => {
         const Link = `${BASE_URL}/form/${formId}`
